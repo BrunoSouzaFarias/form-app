@@ -124,7 +124,112 @@ function App() {
             <Form.Control type="text" name="nome" value={formData.nome} onChange={handleChange} />
           </Form.Group>
 
-          {/* Add other form fields here */}
+          <Form.Group controlId="formNomeMae">
+            <Form.Label>Nome da Mãe:</Form.Label>
+            <Form.Control type="text" name="nomeMae" value={formData.nomeMae} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formRG">
+            <Form.Label>RG:</Form.Label>
+            <Form.Control type="text" name="rg" value={formData.rg} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formCPF">
+            <Form.Label>CPF:</Form.Label>
+            <Form.Control type="text" name="cpf" value={formData.cpf} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formNumeroCartaoSUS">
+            <Form.Label>Número do Cartão SUS:</Form.Label>
+            <Form.Control type="text" name="numeroCartaoSUS" value={formData.numeroCartaoSUS} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formDataNascimento">
+            <Form.Label>Data de Nascimento:</Form.Label>
+            <Form.Control type="text" name="dataNascimento" placeholder="DD/MM/AAAA" value={formData.dataNascimento} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formLocalNascimento">
+            <Form.Label>Local de Nascimento:</Form.Label>
+            <Form.Control type="text" name="localNascimento" value={formData.localNascimento} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formSexo">
+            <Form.Label>Sexo:</Form.Label>
+            <Form.Control as="select" name="sexo" value={formData.sexo} onChange={handleChange}>
+              <option value="">Selecione</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Feminino">Feminino</option>
+            </Form.Control>
+          </Form.Group>
+
+          <Form.Group controlId="formNacionalidade">
+            <Form.Label>Nacionalidade:</Form.Label>
+            <Form.Control type="text" name="nacionalidade" value={formData.nacionalidade} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formTelefone">
+            <Form.Label>Telefone:</Form.Label>
+            <Form.Control type="text" name="telefone" value={formData.telefone} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formEmail">
+            <Form.Label>E-mail:</Form.Label>
+            <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formCEP">
+            <Form.Label>CEP:</Form.Label>
+            <Form.Control type="text" name="cep" value={formData.cep} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formEndereco">
+            <Form.Label>Endereço Residencial:</Form.Label>
+            <Form.Control type="text" name="endereco" value={formData.endereco} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formFuncao">
+            <Form.Label>Função:</Form.Label>
+            <Form.Control as="select" name="funcao" value={formData.funcao} onChange={handleChange}>
+              <option value="">Selecione</option>
+              <option value="Médico">Médico</option>
+              <option value="Enfermeiro">Enfermeiro</option>
+              <option value="Assistência Social">Assistência Social</option>
+              <option value="Psicólogo">Psicólogo</option>
+              {/* Adicione mais opções conforme necessário */}
+            </Form.Control>
+          </Form.Group>
+
+          <Form.Group controlId="formNumeroConselho">
+            <Form.Label>Número Conselho Profissional:</Form.Label>
+            <Form.Control type="text" name="numeroConselho" value={formData.numeroConselho} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formEspecialidade">
+            <Form.Label>Especialidade:</Form.Label>
+            <Form.Control as="select" name="especialidade" value={formData.especialidade} onChange={handleChange}>
+              <option>Médico</option>
+              <option>Psicólogo</option>
+              <option>Pediatra</option>
+              <option>Cardiologista</option>
+              {/* Adicione mais opções conforme necessário */}
+            </Form.Control>
+          </Form.Group>
+
+          <Form.Group controlId="formDataInicialCurso">
+            <Form.Label>Data inicial do curso:</Form.Label>
+            <Form.Control type="text" name="dataInicialCurso" value={formData.dataInicialCurso} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formRegistroFuncional">
+            <Form.Label>Registro Funcional:</Form.Label>
+            <Form.Control type="text" name="registroFuncional" value={formData.registroFuncional} onChange={handleChange} />
+          </Form.Group>
+
+          <Form.Group controlId="formDataFinalCurso">
+            <Form.Label>Data final do curso:</Form.Label>
+            <Form.Control type="text" name="dataFinalCurso" value={formData.dataFinalCurso} onChange={handleChange} />
+          </Form.Group>
 
           <Button variant="primary" type="submit">
             Enviar
