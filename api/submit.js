@@ -1,7 +1,7 @@
 // api/submit.js
 
 import { createObjectCsvWriter } from 'csv-writer';
-import { uploadFile } from '../../controllers/googleDriveUpload'; // Ajuste o caminho conforme necessário
+import { uploadFile } from '../backend/controllers/googleDriveUpload'; // Ajuste o caminho conforme necessário
 
 const submitHandler = async (req, res) => {
   if (req.method === 'POST') {
