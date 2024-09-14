@@ -86,7 +86,7 @@ function App() {
 
     // Implement submission logic here
     try {
-      const response = await fetch('/api/submit', {
+      const response = await fetch('https://form-app-cyan-three.vercel.app/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
