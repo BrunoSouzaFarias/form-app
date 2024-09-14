@@ -1,23 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const cors = require('cors'); // Importe o módulo cors
-const { uploadFile } = require('./controllers/googleDriveUpload'); // Importe a função de upload
+const cors = require('cors');
+const { uploadFile } = require('./controllers/googleDriveUpload');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// Configure o CORS
-app.use(cors());
+// Configure o CORS para permitir solicitações do frontend hospedado no Vercel
+app.use(cors({
+  origin: 'https://form-app-cyan-three.vercel.app'
+}));
 
 // Use body-parser para lidar com JSON
 app.use(bodyParser.json());
 
 app.post('/api/submit', async (req, res) => {
   const data = req.body;
-  app.get('/api/submit', (req, res) => {
-    res.send('Endpoint para POST. Use POST para enviar dados.');
-  });
   
   // Verifique se os dados contêm todos os campos necessários
   if (!data.unidade || !data.nome || !data.email) {
@@ -39,13 +38,12 @@ app.post('/api/submit', async (req, res) => {
       { id: 'endereco', title: 'Endereço' },
       { id: 'cidade', title: 'Cidade' },
       { id: 'estado', title: 'Estado' },
-        { id: 'funcao', title: 'Função' },
-        { id: 'numeroConselho', title: 'Número do Conselho' },
-        { id: 'especialidade', title: 'Especialidade' },
-        { id: 'dataInicialCurso', title: 'Data Inicial do Curso' },
-        { id: 'registroFuncional', title: 'Registro Funcional' },
-        { id: 'dataFinalCurso', title: 'Data Final do Curso' }
-      
+      { id: 'funcao', title: 'Função' },
+      { id: 'numeroConselho', title: 'Número do Conselho' },
+      { id: 'especialidade', title: 'Especialidade' },
+      { id: 'dataInicialCurso', title: 'Data Inicial do Curso' },
+      { id: 'registroFuncional', title: 'Registro Funcional' },
+      { id: 'dataFinalCurso', title: 'Data Final do Curso' }
     ]
   });
 
